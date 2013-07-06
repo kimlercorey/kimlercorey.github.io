@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smoke Signal Experiment</title>
+
+<script src="smokesignals.js"></script>
+<script>
+    var page = {};
+    smokesignals.convert(page);
+    
+    function listener(character) {
+      window.alert ('Key pressed is '+ character + '!');
+    }
+    
+    page.on('write', listener);
+    
+    page.emit('write', 'E');
+    
+</script>
+</head>
+<body>
+    
+    <h1>Smokesignals.js</h1>
+    <p>What is smokesignals?</p>
+    <p></p>
+    
+</body>
+</html>
