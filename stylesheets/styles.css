@@ -101,7 +101,7 @@ header {
   position:fixed;
 }
 
-header ul {
+header ul, .big {
   list-style:none;
   height:40px;
   
@@ -119,6 +119,12 @@ header ul {
   border:1px solid #d2d2d2;
   box-shadow:inset #fff 0 1px 0, inset rgba(0,0,0,0.03) 0 -1px 0;
   width:270px;
+}
+
+.big {
+    
+    font-size: 200%;
+      text-align:center;
 }
 
 header li {
