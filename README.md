@@ -9,3 +9,4 @@ Well, we all need a place to call home.
 - [ ] Add resume
 - [ ] Create widget to blog entries
 - [ ] Mess around with new version of processing
+- [ ] Test commit dates function
