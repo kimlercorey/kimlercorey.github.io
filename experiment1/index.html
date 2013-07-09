@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="/stylesheets/styles.css">
     <link rel="stylesheet" href="/stylesheets/pygment_trac.css">
 <script src="smokesignals.js"></script>
+<script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+
+
 <script>
 
   function listener(key) {
@@ -14,7 +17,7 @@
   }
         
   function listener2(key) {
-     document.getElementById('key').innerText = key;
+     $("#key").text(key);
   }
         
 </script>
@@ -28,7 +31,7 @@
     <div id="ss-basic" class="experiment">
     <p><strong>Basic experiment:</strong> keypress emitter with listener changing out text below...</p> 
     
-    <div class="big" id="key">Press a arrow key</div>
+    <div class="big" id="key">Press an arrow key</div>
     
     </div>
     
