@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Color Gradient</title>
+
+    <link rel="stylesheet" href="/stylesheets/styles-ex1.css">
+    <link rel="stylesheet" href="/stylesheets/pygment_trac.css">
+<script src="smokesignals.js"></script>
+<script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.1/processing-api.min.js"></script>
+
+
+
+<script>
+
+ 
+  
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    init();  
+  }
+  
+  function init() {
+    context.rect(0, 0, canvas.width, canvas.height);
+
+      // add linear gradient
+      var grd = context.createLinearGradient(0, 0, canvas.width, canvas.height);
+      // light blue
+      grd.addColorStop(0, '#0f0');   
+      // dark blue
+      grd.addColorStop(1, '#000');
+      context.fillStyle = grd;
+      context.fill();
+  }
+  
+  function listener(key) {
+    console.log ('listener: Key pressed is '+ key + '!');
+  }
+        
+  function listener2(key) {
+     $("#key").text(key);
+  }
+        
+</script>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<div id="experiment1">
+<a href="../">back</a>    
+    <h2>Experiment 2 : Canvas</h2>
+
+    
+        
+                
+    <div id="ss-basic" class="experiment">
+    <p style="color:#fff; font-size: 22px;"><strong>Basic experiment:</strong> This creates a canvas element that covers the entire page, even on resize and uses a gradient from point 0 to point max.</p> 
+    
+   
+    
+
+    <!--     
+    <div class="big" id="key">Press an arrow key</div>
+    
+    </div>
+    -->
+</div>    
+
+ 
+ 
+</body>
+<script src="experiment2.js"></script>
+</html>
