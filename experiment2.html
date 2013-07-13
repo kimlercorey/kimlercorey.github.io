@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smoke Signal Experiment</title>
+
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="/stylesheets/pygment_trac.css">
+<script src="smokesignals.js"></script>
+<script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+
+
+<script>
+
+  function listener(key) {
+    console.log ('listener: Key pressed is '+ key + '!');
+  }
+        
+  function listener2(key) {
+     $("#key").text(key);
+  }
+        
+</script>
+</head>
+<body>
+<a href="../">back</a>    
+    <h2>Custom Javascript Events experiment (using smokesignals.js)</h2>
+    <p>Smokesignals is a convenience javascript library for adding the capability event emitting (event broadcasting on a channel). An item that is converted has methods on, once, off and emit. Using this method provides a convenient abstraction between events and listeners by creating a "communication channel" to attach listeners through.</p>
+    <p>In this experiment, the arrow keys emit the name of the arrow key. There are two listeners. Loose coupling between the event and listener allow greater flexibility than a direct relationship between the two.</p>
+    
+    <div id="ss-basic" class="experiment">
+    <p><strong>Basic experiment:</strong> keypress emitter with listener changing out text below...</p> 
+    
+    <div class="big" id="key">Press an arrow key</div>
+    
+    </div>
+    
+    
+</body>
+<script src="page.js"></script>
+</html>
