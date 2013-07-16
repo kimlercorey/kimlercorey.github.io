@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Color Gradient</title>
+
+    <link rel="stylesheet" href="/stylesheets/styles-ex3.css">
+    <link rel="stylesheet" href="/stylesheets/pygment_trac.css">
+<script src="smokesignals.js"></script>
+<script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="//cdn.jsdelivr.net/easeljs/0.6.1/easeljs.min.js"></script>
+
+
+
+<script>
+
+   var ca = 'x',
+   step = 5,
+   shape;
+   
+   function handleTick() {
+     //Circle will move 10 units to the right.
+        if (ca == 'right') circle.x += step;
+        if (ca == 'left') circle.x -= step;
+        if (ca == 'down') circle.y += step;
+        if (ca == 'up') circle.y -= step;
+        if (ca == 'space') fire(circle);
+        //Will cause the circle to wrap back
+        if (circle.x > stage.canvas.width) { circle.x = 0; }
+        stage.update();
+    }
+  
+  function fire(circle) {
+  
+      ca = 'stop';
+      console.log("Fire !!");
+      console.log("X:"+circle.x);
+      console.log("Y:"+circle.y);
+      
+//var graphics = new createjs.Graphics().beginFill("#ff0000").drawRect(0, 0, 100, 100);
+// var shape = new createjs.Shape(graphics);
+
+ //Alternatively use can also use the graphics property of the Shape class to renderer the same as above.   
+ shape = new createjs.Shape();
+ shape.graphics.beginFill("#ff00ff").drawRect(50, 50, 100, 100);
+  
+  }
+  
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    init();  
+  }
+  
+  function init() {
+    context.rect(0, 0, canvas.width, canvas.height);
+
+       // add linear gradient
+      var grd = context.createLinearGradient(0, 0, canvas.width, canvas.height);
+      // light blue
+      grd.addColorStop(0, '#0f0');   
+      // dark blue
+      grd.addColorStop(1, '#000');
+      context.fillStyle = grd;
+      context.fill();
+       
+      
+    stage = new createjs.Stage("canvas");
+    circle = new createjs.Shape();
+    circle.graphics.beginFill("red").drawCircle(0, 0, 40);
+    circle.x = circle.y = 50;
+    stage.addChild(circle);
+    stage.update();
+
+      
+    createjs.Ticker.addEventListener("tick", handleTick);
+
+  }
+  
+  function listener(key) {
+    console.log ('listener: Key pressed is '+ key + '!');
+    ca = key;
+  }
+        
+  function listener2(key) {
+     $("#key").text(key);
+  }
+        
+</script>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<div id="experiment1">
+<a href="../">back</a>    
+    <h2>Experiment 3 : EaselJS</h2>
+
+    
+        
+                
+    <div id="ss-basic" class="experiment">
+    <p style="color:#fff; font-size: 22px;"><strong>Basic experiment:</strong> creates a cicle which responds to arrow keys and space bar which are emitted events.</p> 
+    
+   
+    
+
+    <!--     
+    <div class="big" id="key">Press an arrow key</div>
+    
+    </div>
+    -->
+</div>    
+
+ 
+ 
+</body>
+<script src="experiment3.js"></script>
+</html>
