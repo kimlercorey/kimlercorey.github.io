@@ -6,7 +6,7 @@ Well, we all need a place to call home.
 
 ## Todo
 - [ ] Create visualization for the front page
-- [ ] Add resume
+- [x] Add resume
 - [ ] Create widget to blog entries
-- [ ] Mess around with new version of processing
-- [ ] Test commit dates function
+- [x] Mess around with new version of processing
+- [x] Test commit dates function
