@@ -96,6 +96,7 @@ img {
 }
 
 header {
+
   width:270px;
   float:left;
   position:fixed;
@@ -266,5 +267,5 @@ html, body { width:100%; height:100%; }
 
 canvas { display:block; background: #ddd;} 
 
-
-
+.gray {color: #777;}
+.centered {line-height: inherit;}
